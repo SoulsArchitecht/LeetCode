@@ -2,12 +2,14 @@ package org.example.CASE1961;
 
 public class Case1961 {
     public boolean isPrefixString(String s, String[] words) {
-        StringBuilder result = new StringBuilder();
-        int length = words[0].length();
+        StringBuilder prefix = new StringBuilder();
         for (String word : words) {
-            result.append(word);
+            prefix.append(word);
+            if (prefix.toString().equals(s)) {
+                return true;
+            }
         }
-        return (result.toString().startsWith(s) && s.length() == length);
+        return false;
     }
 }
 
